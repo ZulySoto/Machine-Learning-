@@ -305,7 +305,7 @@ def eucledianDistance(trainData, centerClusters, numOfClusters):
         print(counter)
         counter = counter + 1
 
-    clusterdata = []
+    clustesWithData= []
     clustersWithData.append(clusters1)
     clustersWithData.append(clusters2)
     clustersWithData.append(clusters3)
