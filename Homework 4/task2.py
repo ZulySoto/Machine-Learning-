@@ -17,7 +17,7 @@ def readData(filename):
     x = 1
     y = 1
     while(x < 1000):
-        while(y < 784):
+        while(y < 597):
             data.append(reader.values[x - 1][y - 1])
             y = y + 1
         trainData.append(data)
@@ -249,6 +249,8 @@ def eucledianDistance(trainData, centerClusters, numOfClusters):
     clusters9 = []
     clusters10 = []
 
+    print(len(centerClusters))
+    print(len(trainData[0]))
     counter = 0
     z = 0
     #X should be the rows
@@ -257,7 +259,7 @@ def eucledianDistance(trainData, centerClusters, numOfClusters):
         while(z < numOfClusters):
             y = 0
             add = 0
-            while(y < 783):
+            while(y < 596):
                 subtract = np.subtract(trainData[x][y], centerClusters[0][0][y])
                 square = subtract * subtract
                 add = add + square
@@ -340,7 +342,7 @@ def cosineSimilarity(trainData, centerClusters, numOfClusters):
             addT = 0
             addC = 0
             product = 0
-            while(y < 783):
+            while(y < 597):
                 product = product + trainData[0][y] * centerClusters[z][0][y]
                 multT = trainData[0][y]* trainData[0][y]
                 addT  = addT + multT
@@ -426,7 +428,7 @@ def jaccard(trainData, centerClusters, numOfClusters):
             y = 0
             add = 0
             total = 0
-            while(y < 783):
+            while(y < 597):
                 if(trainData[0][y] == centerCluster):
                     add = add + 1
                 total =  total + 1
